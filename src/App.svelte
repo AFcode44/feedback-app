@@ -1,30 +1,28 @@
 <script lang="ts">
-	export let name: string;
+import CardList from "./components/card/CardList.svelte";
+import type { CardDTO } from "./model/card/card-dto";
+
+	const testData: Array<CardDTO> = [
+		{
+			message: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam sapiente esse perferendis, saepe molestias minus facere consequuntur sint nam nostrum!',
+			raiting: 9
+		},
+		{
+			message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam cum praesentium quae.',
+			raiting: 5
+		}
+	];
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<div class="__main-container">
+		<CardList items={testData}/>
+	</div>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+	.__main-container {
+		width: 768px;
 		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
 	}
 </style>
